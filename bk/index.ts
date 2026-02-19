@@ -19,6 +19,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(morgan("dev"));
 app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(cors({ origin: `http://${process.env.SERVER_IP}:5173`, credentials: true }));
 
 app.use("/api/items", itemRoutes);
 app.use("/api/users", userRoutes);
