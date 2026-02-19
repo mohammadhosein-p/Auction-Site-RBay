@@ -10,7 +10,7 @@ const sendHttp = async ({
 }) => {
   try {
     const response = await axios({
-      url: `http://localhost:3000${endpoint}`,
+      url: `http://45.149.79.177:3000${endpoint}`,
       method,
       data: body,
       headers,
@@ -222,12 +222,12 @@ export const useLogout = () =>
 export const useGetUserItems = (id) =>
   useQuery({
     queryKey: ['userItem'],
-    queryFn: () => 
+    queryFn: () =>
       sendHttp({
         endpoint: `/api/users/items/${id}`,
-        method:"GET"
-      })
-  })
+        method: 'GET',
+      }),
+  });
 
 // export const usePageRelation = () =>
 //   useMutation({
