@@ -11,14 +11,14 @@ services:
   rbay-fr:
     image: ghcr.io/mohammadhosein-p/rbay-fr:latest
     ports:
-      - 5173:80
+      - 80:80
     
   rbay-bk:
     image: ghcr.io/mohammadhosein-p/rbay-bk:latest
     env_file:
       - .env
-    ports:
-      - 3000:3000
+    expose:
+      - 3000
     depends_on:
       - rbay-db
 
