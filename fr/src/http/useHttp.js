@@ -10,7 +10,7 @@ const sendHttp = async ({
 }) => {
   try {
     const response = await axios({
-      url: `http://45.149.79.177:3000${endpoint}`,
+      url: `http://45.149.79.177${endpoint}`,
       method,
       data: body,
       headers,
